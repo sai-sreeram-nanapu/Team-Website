@@ -290,7 +290,7 @@ fetch(requests.fetchDocumentaries)
   });
 
 
-fetch('http://localhost:5000/api/auth/trailers')
+fetch('https://team-website-br8m.onrender.com/api/auth/trailers')
     .then(res => res.json())
     .then(data => {
         data.forEach(trailer => {
@@ -312,7 +312,7 @@ loginBtn.addEventListener('click', () => {
 // Fetch and Display Trailers
 async function fetchTrailers() {
     try {
-        const response = await fetch('http://localhost:5000/api/auth/trailers');
+        const response = await fetch('https://team-website-br8m.onrender.com/api/auth/trailers');
         const trailers = await response.json();
 
         const trailerContainer = document.getElementById('trailer-section');
@@ -341,7 +341,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value;
 
   try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('https://team-website-br8m.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
@@ -379,7 +379,7 @@ function showSignupForm(email = '', password = '') {
       const signupPassword = document.getElementById('signup-password').value;
 
       try {
-          const response = await fetch('http://localhost:5000/api/auth/register', {
+          const response = await fetch('https://team-website-br8m.onrender.com/api/auth/register', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ email: signupEmail, password: signupPassword }),
